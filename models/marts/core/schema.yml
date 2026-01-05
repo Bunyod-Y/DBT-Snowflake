@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "One record per customer, with aggregated order metrics."
+    columns:
+      - name: customer_id
+        description: "Primary key. Unique ID of the customer."
+        tests:
+          - unique
+          - not_null
+
+      - name: first_order_date
+        description: "Date of the customer's very first order."

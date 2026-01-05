@@ -1,0 +1,24 @@
+name: jaffle_shop
+
+profile: jaffle_shop
+
+seed-paths: ["seeds"]
+model-paths: ["models"]
+macro-paths: ["macros"]
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+seeds:
+  # Builds seeds into '<your_schema_name>_raw'
+  jaffle_shop:
+    +schema: raw
+
+models:
+  jaffle_shop:
+    # Add the '+' sign here
+    +materialized: view
+    
+    marts:
+      # And add the '+' sign here
+      +materialized: table
